@@ -1,0 +1,78 @@
+﻿@model TPLOCAL1.Models.FormulaireModel
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "Page Validation";
+    ViewBag.h1 = "Page Validation";
+
+    ViewBag.h1 = "Formulaire TP HN";
+    ViewBag.Link1 = "<a href=\"/Home/Index\">Page d'accueil</a>";
+    ViewBag.Link2 = "<a href=\"/Home/Index/ListeAvis\">List Avis</a>";
+
+}
+
+
+<p>
+    Votre formulaire a bien été pris en compte.
+</p>
+<table>
+    <caption>
+        Informations personnelles
+    </caption>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Nom)</td>
+        <td>@Html.DisplayFor(f => f.Nom)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Prenom)</td>
+        <td>@Html.DisplayFor(f => f.Prenom)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Sexe)</td>
+        <td>@Html.DisplayFor(f => f.Sexe)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Adresse)</td>
+        <td>@Html.DisplayFor(f => f.Adresse)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Cpostal)</td>
+        <td>@Html.DisplayFor(f => f.Cpostal)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Ville)</td>
+        <td>@Html.DisplayFor(f => f.Ville)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Email)</td>
+        <td>@Html.DisplayFor(f => f.Email)</td>
+    </tr>
+</table>
+<br />
+<table>
+    <caption>
+        Information Formation Suivie
+    </caption>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.DateF)</td>
+        <td>@Html.DisplayFor(f => f.DateF)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.FormationASuivire)</td>
+        <td>@Html.DisplayFor(f => f.FormationASuivire)</td>
+    </tr>
+</table>
+<br />
+<table>
+    <caption>
+        Avis sur la Formation
+    </caption>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Fcobol)</td>
+        <td>@Html.DisplayFor(f => f.Fcobol)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(f => f.Csharp)</td>
+        <td>@Html.DisplayFor(f => f.Csharp)</td>
+    </tr>
+</table>
+

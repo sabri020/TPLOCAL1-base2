@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
 using TPLOCAL1.Models;
+using System.Reflection;
 
 //L'énoncé du tp et le logo hn sont livrés dans le répertoire /ressources de la solution
 //--------------------------------------------------------------------------------------
@@ -13,6 +15,7 @@ namespace TPLOCAL1.Controllers
 {
     public class HomeController : Controller
     {
+
         // méthode appelée par la routeur "naturellement"
         public ActionResult Index(string id)
         {
@@ -26,8 +29,11 @@ namespace TPLOCAL1.Controllers
                 {
                     case "ListeAvis":
                         //reste à faire : coder la lecture du fichier xml fourni
-                        return View(id);
+                        ListeAvis avisDonnes = new ListeAvis();
+
+                        return View(id, avisDonnes.GetAvis(Server.MapPath("~/FichierXML/DataAvis.xml"))) ;
                     case "Formulaire":
+                      
                         //reste à faire : appeler la vue Formulaire avec le modèle de données vide
                         return View(id);
                     default:
@@ -37,15 +43,32 @@ namespace TPLOCAL1.Controllers
             }
         }
 
-
+      
         //méthode pour envoyer les données du formulaire vers la page de validation
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        public ActionResult ValidationFormulaire(FormulaireModel modelv)
         {
+            
+            if (modelv.Sexe != "Homme" || modelv.Sexe != "Femme" || modelv.Sexe != "Autre")
+            {
+                ModelState.AddModelError("", "Merci de vérifier le Sexe"+ modelv.Sexe);
+            }
+            if (modelv.FormationASuivire == null)
+            {
+                ModelState.AddModelError("", "Merci de vérifier le Type de Formation");
+
+            }
+
+
+
+            if (!ModelState.IsValid)
+            {
+                return View("Formulaire");
+            }
             //reste à faire : tester de si les champs du modele sont bien remplis
             //s'ils ne sont pas bien remplis, afficher une erreur et rester sur la page formulaire
             //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
-                
+            return View(modelv);
         }
     }
 }

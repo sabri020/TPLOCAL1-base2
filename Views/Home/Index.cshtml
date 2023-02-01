@@ -1,17 +1,12 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Bienvenue dans le TP HN";
+    ViewBag.h1 = "Bienvenue dans le TP HN";
+
+    ViewBag.Link1 = "<a href=\"/Home/Index/Formulaire\">Remplir le formulaire</a>";
+    ViewBag.Link2 = "<a href=\"/Home/Index/ListeAvis\">List Avis</a>";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> i'm bleu
-    </div>
-</body>
-</html>
+    <p>
+        <a href="/Home/Index/Formulaire">Remplir le formulaire</a>
+    </p>
