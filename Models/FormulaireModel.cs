@@ -27,8 +27,8 @@ namespace TPLOCAL1.Models
         public string Adresse { get; set; }
 
         [Display(Name = "Code Postal")]
-        [Required(ErrorMessage = "Merci de vérifier le Code Postal")]
-        [RegularExpression(@"^[0-9]{5}$", ErrorMessage = "Code Postal doit être sur 5 caractères numériques ")]
+        [Required(ErrorMessage = "Code Postal doit être sur 5 caractères numériques")]
+        [RegularExpression(@"^[0-9]{5}$")]
         public string Cpostal { get; set; }
 
         [Display(Name = "Ville")]
@@ -42,17 +42,14 @@ namespace TPLOCAL1.Models
 
 
         [Display(Name = "Date début formation")]
-        [Required(ErrorMessage = "La date doit être inférieure au  01 / 01 / 2021")]
+        [Required(ErrorMessage = "La date doit être inférieure au  01/01/2021")]
         [Range(typeof(DateTime), "1/1/2011", "1/1/2021")]
         public string DateF { get; set; }
 
         [Display(Name = "Formation Suivie")]
         [Required]
         public string FormationASuivire { get; set; }
-
-
-
-
+        
         [Display(Name = "Formation Cobol")]
         public string Fcobol { get; set; }
 
