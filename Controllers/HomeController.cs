@@ -48,16 +48,16 @@ namespace TPLOCAL1.Controllers
         [HttpPost]
         public ActionResult ValidationFormulaire(FormulaireModel modelv)
         {
-            
-            if (modelv.Sexe != "Homme" || modelv.Sexe != "Femme" || modelv.Sexe != "Autre")
+            if (modelv.Sexe == "Sélectionner un sexe")
             {
-                ModelState.AddModelError("", "Merci de vérifier le Sexe"+ modelv.Sexe);
+                ModelState.AddModelError("", "Merci de vérifier le Sexe");
             }
-            if (modelv.FormationASuivire == null)
+
+            if (modelv.FormationASuivire == "Sélectionner une formation")
             {
                 ModelState.AddModelError("", "Merci de vérifier le Type de Formation");
-
             }
+
 
 
 

@@ -19,9 +19,8 @@ namespace TPLOCAL1.Models
         public string Prenom { get; set; }
 
         [Display(Name = "Sexe")]
-        [Required(ErrorMessage = "Merci de vérifier le Sexe")]
+        [Required]
         public string Sexe { get; set; }
-
 
         [Display(Name = "Adresse")]
         [Required(ErrorMessage = "Merci de vérifier l'Adresse")]
@@ -48,7 +47,7 @@ namespace TPLOCAL1.Models
         public string DateF { get; set; }
 
         [Display(Name = "Formation Suivie")]
-        [Required(ErrorMessage = "Merci de vérifier le Type de Formation")]
+        [Required]
         public string FormationASuivire { get; set; }
 
 
