@@ -13,6 +13,9 @@
     @using (Html.BeginForm("ValidationFormulaire", "Home", FormMethod.Post))
     {
             <table>
+                <caption>
+                    Information personnelles
+                </caption>
                 <tr>
                     <td>@Html.DisplayNameFor(f => f.Nom)</td>
                     <td>@Html.TextBoxFor(f => f.Nom)</td>
@@ -89,8 +92,8 @@
                     <td>@Html.TextBoxFor(f => f.Csharp)</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Envoyer" /> </td>
+                    <td style="border: 0px;"></td>
+                    <td style="border: 0px;"><input type="submit" name="submit" value="Envoyer" /> </td>
                 </tr>
             </table>
             }
